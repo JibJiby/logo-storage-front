@@ -18,7 +18,15 @@
     "isolatedModules": true,
     "jsx": "preserve", // emotion을 위한 설정. https://emotion.sh/docs/typescript
     "incremental": true,
-    "jsxImportSource": "@emotion/react" // css props 사용을 위해
+    "jsxImportSource": "@emotion/react", // css props 사용을 위해
+    // path alias 를 위한 옵션 (Next.js 9.4부터는 여기 값을 자동으로 next가 읽어서 적용함)
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@styles/*": ["src/styles"],
+      "@public/*": ["src/public"]
+    }
   },
   "include": [
     "next-env.d.ts",
