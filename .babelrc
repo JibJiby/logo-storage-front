@@ -3,7 +3,7 @@
 {
     "presets": [
       [
-        "next/babel",
+        "next/babel", // es6이상 문법과 타입스크립트 지원함.
         {
           "preset-react": {
             "runtime": "automatic",

@@ -9,6 +9,7 @@ export const headerStyle = css`
 `
 
 export const contentStyle = css`
+    width: 100%;
     height: 100%;
     background-color: dodgerblue;
 `

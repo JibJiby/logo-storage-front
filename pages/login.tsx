@@ -7,11 +7,9 @@ const Login: NextPage = () => {
     return (
         <>
             <Head>
-                <title>회원가입</title>
+                <title>로그인</title>
             </Head>
-            <AppLayout>
-                <LoginForm />
-            </AppLayout>
+            <LoginForm />
         </>
     )
 }

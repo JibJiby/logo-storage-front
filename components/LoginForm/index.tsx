@@ -1,7 +1,10 @@
+import { useRouter } from 'next/router'
 import React, { useState, useCallback } from 'react'
-import { formStyle } from './styles'
+import { formStyle, inputIdStyle, inputPwStyle, loginButtonStyle, LoginLayout } from './styles'
 
 const LoginForm = () => {
+    const router = useRouter()
+
     const [id, setId] = useState('')
     const [password, setPassword] = useState('')
 
@@ -14,18 +17,38 @@ const LoginForm = () => {
     }, [])
 
     return (
-        <form css={formStyle}>
-            <div>
-                <label htmlFor="user-id">아이디</label>
-                <br />
-                <input name="user-id" value={id} onChange={onChangeId} />
+        <LoginLayout>
+            <div className="logo-wrapper">
+                <div className="logo" onClick={(e) => router.push('/')}>
+                    로고
+                </div>
             </div>
-            <div>
-                <label htmlFor="user-password">비밀번호</label>
-                <br />
-                <input name="user-password" value={password} onChange={onChangePassword} />
-            </div>
-        </form>
+            <form css={formStyle}>
+                <div>
+                    <input
+                        name="user-id"
+                        value={id}
+                        type="text"
+                        onChange={onChangeId}
+                        placeholder="아이디"
+                        css={inputIdStyle}
+                    />
+                </div>
+                <div>
+                    <input
+                        name="user-password"
+                        type="password"
+                        value={password}
+                        onChange={onChangePassword}
+                        placeholder="비밀번호"
+                        css={inputPwStyle}
+                    />
+                </div>
+                <div>
+                    <input type="button" value="로그인" css={loginButtonStyle} onClick={() => router.push('/')} />
+                </div>
+            </form>
+        </LoginLayout>
     )
 }
 
